@@ -1,3 +1,41 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+@layer components{
+  .ql-editor{
+    @apply 
+          prose-base
+        prose-a:text-blue-600 
+          prose-a:underline 
+          prose-blockquote:border-l-[4px] 
+          prose-img:m-0
+          prose-img:mx-auto
+          ; 
+  }
+  .blockqoute{
+    @apply 
+        my-2 text-base-100 bg-base-content;
+  }
+ 
+}
+
+@layer utilities{
+
+  .blockqoute{
+    /* border-left: 4px solid #cdcdcdf1; 
+    padding-left: 10px; 
+    padding: 5px;
+    color: #ffffff; 
+    background-color:gray; */
+  }
+ 
+
+  .ql-video{
+    aspect-ratio: 16/8;
+    width: 80%;
+    margin: auto;
+    height: auto;
+  }
+}
