@@ -30,14 +30,9 @@
     <div class="w-[100%] px-5 py-2 ">
         <button class="m-1 btn btn-neutral hover:btn-ghost btn-sm" id="result">Result Blog</button>
 
-        <article  class="border ql-editor max-w-[880px] m-auto" id="wadah">
-                
-        </article>
+       
      
-        <div class="m-auto max-w-[880px]   border-red-800">
-            <div id="editor" class="shadow " >
-            </div>
-        </div>
+        
 
         <div class="my-2 border shadow-md mockup-window bg-base-300">
             <div class="flex justify-center px-4 py-16 bg-base-200">Hello!</div>

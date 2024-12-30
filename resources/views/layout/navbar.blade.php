@@ -1,4 +1,4 @@
-<div class="sticky top-0 z-50 h-12 shadow-md navbar min-h-10 bg-base-200">
+<div class="sticky top-0 z-50 h-12 shadow shadow-purple-500 navbar min-h-10 bg-base-200">
   <div class="navbar-start">
     <div class="dropdown">
       <div tabindex="0" role="button" class="btn btn-ghost btn-circle">
