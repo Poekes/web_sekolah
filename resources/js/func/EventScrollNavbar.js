@@ -1,6 +1,6 @@
-const mdn = document.getElementById("menuDropdown");
-const sdn = document.getElementById("searchDropdown");
-const navbar = document.getElementById("navbar");
+const mdn = document.getElementById("menuDropdown"),
+    sdn = document.getElementById("searchDropdown"),
+    navbar = document.getElementById("navbar");
 let mdnfocus = false,
     lastPosScroll = 0;
 mdn.onfocus = () => (mdnfocus = true);
@@ -18,19 +18,12 @@ const OnNavbarDom = () => {
 
 function EventScrollNavbar(event) {
     if (mdnfocus) return; // ketika posisi dropdown muncul tidak terjadi event ini { Menu Dropdown }
-    // window.scrollY;
 
-    if (window.scrollY > lastPosScroll) {
-        console.log("kebawah");
-        hiddenNavbarDom();
-    } else {
-        console.log("atas");
-        OnNavbarDom();
-    }
+    if (window.scrollY > lastPosScroll)
+        hiddenNavbarDom(); // ketika scroll ke atas
+    else OnNavbarDom(); //ketika scroll kebawah
 
     lastPosScroll = window.scrollY;
-
-    // return "test";
 }
 
 export default EventScrollNavbar;
