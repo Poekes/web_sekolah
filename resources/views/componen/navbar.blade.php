@@ -55,7 +55,7 @@
               <div tabindex="0" role="button" class="btn btn-ghost btn-sm rounded-btn">Menu</div>
               <ul
                 tabindex="0"
-                class="menu dropdown-content bg-base-100 rounded-box z-[1] mt-4 w-40 md:w-52 p-2 shadow">
+                class="menu dropdown-content bg-base-100 rounded-box z-[1] mt-4 w-48 md:w-52 p-2 shadow">
 
                 <li>
                   <details open>
