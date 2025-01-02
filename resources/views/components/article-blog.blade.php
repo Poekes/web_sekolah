@@ -1,3 +1,3 @@
-<div>
-    <!-- Knowing is not enough; we must apply. Being willing is not enough; we must do. - Leonardo da Vinci -->
-</div>
+<article  class="border ql-editor max-w-[880px] m-auto" >
+    {{ $slot }}
+</article>

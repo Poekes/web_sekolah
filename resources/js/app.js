@@ -1,11 +1,20 @@
 import "./bootstrap";
 import Alpine from "alpinejs";
-import EventScrollNavbar from "./func/EventScrollNavbar";
 
 window.Alpine = Alpine;
+
+Alpine.store("window", {
+    FuncOnScroll: [],
+
+    onscroll(callback) {
+        this.FuncOnScroll.push(callback);
+    },
+});
 
 Alpine.start();
 
 window.onscroll = (event) => {
-    EventScrollNavbar(event);
+    Alpine.store("window").FuncOnScroll.forEach((element) => {
+        element(event);
+    });
 };
