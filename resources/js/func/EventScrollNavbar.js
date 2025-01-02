@@ -10,13 +10,15 @@ sdn.onfocus = () => (mdnfocus = true);
 sdn.onblur = () => (mdnfocus = false);
 
 const hiddenNavbarDom = () => {
+    // navbar akan menghilang ke atas
     navbar.style.top = "-200px";
 };
 const OnNavbarDom = () => {
+    // navbar akan turun
     navbar.style.top = "0.25rem";
 };
 
-function EventScrollNavbar(event) {
+export default function EventScrollNavbar(event) {
     if (mdnfocus) return; // ketika posisi dropdown muncul tidak terjadi event ini { Menu Dropdown }
 
     if (window.scrollY > lastPosScroll)
@@ -25,5 +27,3 @@ function EventScrollNavbar(event) {
 
     lastPosScroll = window.scrollY;
 }
-
-export default EventScrollNavbar;
