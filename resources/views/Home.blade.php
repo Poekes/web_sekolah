@@ -17,7 +17,22 @@
 
 <body class="w-full">
     <x-Navbar></x-Navbar>
-    <x-Hero-section></x-Hero-section>
+    <x-Hero-section>
+        {{-- @dd($content) --}}
+        <x-slot:content>
+            @foreach ($content as $value)
+                <video src="{{ asset('storage/' . $value['url']) }}"
+                       class="absolute z-30 object-cover w-full h-full"
+                       id="carouselContent"
+                       autoplay
+                       muted
+                       style="z-index: {{ $value['index'] }};"
+                       loop>
+
+                </video>
+            @endforeach
+        </x-slot:content>
+    </x-Hero-section>
     <div class="w-full min-w-[300px] max-w-[850px] border m-auto">
 
 
