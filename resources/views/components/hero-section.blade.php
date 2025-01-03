@@ -8,22 +8,34 @@
                 PPDB! 2024/2025 Gelombang I, Pendaftaran dimulai pada Tanggal 26 Januari 2024
             </p>
             <!-- Open the modal using ID.showModal() method -->
-            <button class="px-4 py-0 mb-3 btn btn-primary"
-                    onclick="my_modal_2.showModal()">DAFTAR</button>
-            <dialog id="my_modal_2"
-                    class="modal">
-                <div class="text-gray-800 modal-box">
-                    <form method="dialog">
-                        <button class="absolute btn btn-sm btn-circle btn-ghost right-2 top-2">✕</button>
-                    </form>
-                    <h3 class="text-lg font-bold ">Hallo</h3>
-                    <p class="py-4">Press ESC key or click outside to close</p>
-                </div>
-                <form method="dialog"
-                      class="modal-backdrop">
-                    <button>close</button>
-                </form>
-            </dialog>
+            <button class="px-4 py-0 mb-3 btn btn-primary">DAFTAR</button>
+            <button class="absolute text-white btn btn-circle btn-outline btn-sm sm:btn-md bottom-20 left-8 sm:left-24 ">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="currentColor"
+                     class="size-6">
+                    <path fill-rule="evenodd"
+                          d="M11.03 3.97a.75.75 0 0 1 0 1.06l-6.22 6.22H21a.75.75 0 0 1 0 1.5H4.81l6.22 6.22a.75.75 0 1 1-1.06 1.06l-7.5-7.5a.75.75 0 0 1 0-1.06l7.5-7.5a.75.75 0 0 1 1.06 0Z"
+                          clip-rule="evenodd" />
+                </svg>
+            </button>
+            <button
+                    class="absolute text-white btn btn-circle btn-outline btn-sm sm:btn-md bottom-20 right-8 sm:right-24">
+                <svg xmlns="http://www.w3.org/2000/svg"
+                     viewBox="0 0 24 24"
+                     fill="currentColor"
+                     class="size-6">
+                    <path fill-rule="evenodd"
+                          d="M12.97 3.97a.75.75 0 0 1 1.06 0l7.5 7.5a.75.75 0 0 1 0 1.06l-7.5 7.5a.75.75 0 1 1-1.06-1.06l6.22-6.22H3a.75.75 0 0 1 0-1.5h16.19l-6.22-6.22a.75.75 0 0 1 0-1.06Z"
+                          clip-rule="evenodd" />
+                </svg>
+            </button>
+            <div class="absolute px-1 bottom-10">
+                <button class="w-2 h-1 rounded-full opacity-50 sm:w-4 sm:h-2 bg-base-200"></button>
+                <button class="w-2 h-1 rounded-full opacity-100 sm:w-4 sm:h-2 bg-base-200"></button>
+                <button class="w-2 h-1 rounded-full opacity-50 sm:w-4 sm:h-2 bg-base-200"></button>
+
+            </div>
 
         </div>
     </div>
