@@ -1,28 +1,32 @@
-@props(['content'])
 <div class="min-h-screen hero "
      x-data="{
          carousel: 1,
          lastCarousel: 0,
          init() {
+             const content = document.querySelectorAll('#carouselContent');
+             content[0].play();
              $nextTick(() => {
-                 $refs.carouselbtn.children[this.carousel].click()
+                 const btnCarouselBottom = $refs.carouselbtn.children[this.carousel];
+                 btnCarouselBottom.click();
              })
-             //  $refs[this.carousel + 'carsouselbtn'].classList.add('opacity-100')
-     
-     
-             //  this.content.
          },
          HandleBtnCarousel(id, el) {
+             if (id == this.lastCarousel) return;
              this.carousel = id
-             //  console.log($refs.carouselbtn.)
-             if (this.lastCarousel == 0) {} else {
+             if (this.lastCarousel != 0) {
                  $refs.carouselbtn.querySelectorAll('button').forEach((element) => element.classList.add('opacity-50'))
              }
-             this.lastCarousel = id
              el.classList.remove('opacity-50');
-             document.querySelectorAll('#carouselContent').forEach((er) => er.style.zIndex = 1)
+             document.querySelectorAll('#carouselContent').forEach((er) => {
+                 if (this.lastCarousel != 0) {
+                     er.pause()
+                     er.style.zIndex = 1
+                 }
+             })
+             this.lastCarousel = id
+     
              $refs.contentCarousel.children[id - 1].style.zIndex = 10;
-             //  console.log(this.carousel, );
+             $refs.contentCarousel.children[id - 1].play();
          },
          handleBtnLeft() {
              const id = this.carousel == 1 ? $refs.contentCarousel.childElementCount : this.carousel - 1;
@@ -33,9 +37,7 @@
              $refs.carouselbtn.children[id].click()
          }
      
-     
-     }"
-     style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);">
+     }">
 
     <div class="z-20 hero-overlay bg-opacity-60"></div>
     <div class=" z-30 hero-content text-neutral-content sm:w-[100%] md:max-w-3xl">
@@ -81,7 +83,16 @@
     </div>
     <div class="relative z-10 bg-red-500 hero-overlay"
          x-ref="contentCarousel">
-        {{ $content }}
+        @foreach ($herocontent as $value)
+            <video src="{{ asset('storage/' . $value['url']) }}"
+                   class="absolute z-30 object-cover w-full h-full"
+                   id="carouselContent"
+                   {{-- autoplay=false --}}
+                   muted
+                   style="z-index: {{ $value['index'] }};"
+                   loop>
+            </video>
+        @endforeach
     </div>
 
 </div>

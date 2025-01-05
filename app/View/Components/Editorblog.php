@@ -6,7 +6,7 @@ use Closure;
 use Illuminate\Contracts\View\View;
 use Illuminate\View\Component;
 
-class editor_blog extends Component
+class Editorblog extends Component
 {
     /**
      * Create a new component instance.
@@ -21,6 +21,6 @@ class editor_blog extends Component
      */
     public function render(): View|Closure|string
     {
-        return view('components.editor_blog');
+        return view('components.editorblog');
     }
 }
