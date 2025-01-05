@@ -1,28 +1,32 @@
-@props(['content'])
 <div class="min-h-screen hero "
      x-data="{
          carousel: 1,
          lastCarousel: 0,
          init() {
+             const content = document.querySelectorAll('#carouselContent');
+             content[0].play();
              $nextTick(() => {
-                 $refs.carouselbtn.children[this.carousel].click()
+                 const btnCarouselBottom = $refs.carouselbtn.children[this.carousel];
+                 btnCarouselBottom.click();
              })
-             //  $refs[this.carousel + 'carsouselbtn'].classList.add('opacity-100')
-     
-     
-             //  this.content.
          },
          HandleBtnCarousel(id, el) {
+             if (id == this.lastCarousel) return;
              this.carousel = id
-             //  console.log($refs.carouselbtn.)
-             if (this.lastCarousel == 0) {} else {
+             if (this.lastCarousel != 0) {
                  $refs.carouselbtn.querySelectorAll('button').forEach((element) => element.classList.add('opacity-50'))
              }
-             this.lastCarousel = id
              el.classList.remove('opacity-50');
-             document.querySelectorAll('#carouselContent').forEach((er) => er.style.zIndex = 1)
+             document.querySelectorAll('#carouselContent').forEach((er) => {
+                 if (this.lastCarousel != 0) {
+                     er.pause()
+                     er.style.zIndex = 1
+                 }
+             })
+             this.lastCarousel = id
+     
              $refs.contentCarousel.children[id - 1].style.zIndex = 10;
-             //  console.log(this.carousel, );
+             $refs.contentCarousel.children[id - 1].play();
          },
          handleBtnLeft() {
              const id = this.carousel == 1 ? $refs.contentCarousel.childElementCount : this.carousel - 1;
@@ -32,7 +36,6 @@
              const id = this.carousel == $refs.contentCarousel.childElementCount ? 1 : this.carousel + 1;
              $refs.carouselbtn.children[id].click()
          }
-     
      
      }">
 
@@ -84,7 +87,7 @@
             <video src="{{ asset('storage/' . $value['url']) }}"
                    class="absolute z-30 object-cover w-full h-full"
                    id="carouselContent"
-                   autoplay
+                   {{-- autoplay=false --}}
                    muted
                    style="z-index: {{ $value['index'] }};"
                    loop>
