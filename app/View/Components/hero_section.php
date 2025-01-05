@@ -11,9 +11,10 @@ class hero_section extends Component
     /**
      * Create a new component instance.
      */
-    public function __construct()
+    public $hero_content;
+    public function __construct($hero_content = [])
     {
-        //
+        $this->hero_content = $hero_content;
     }
 
     /**
