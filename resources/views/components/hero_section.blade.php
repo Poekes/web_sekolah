@@ -34,8 +34,7 @@
          }
      
      
-     }"
-     style="background-image: url(https://img.daisyui.com/images/stock/photo-1507358522600-9f71e620c44e.webp);">
+     }">
 
     <div class="z-20 hero-overlay bg-opacity-60"></div>
     <div class=" z-30 hero-content text-neutral-content sm:w-[100%] md:max-w-3xl">
