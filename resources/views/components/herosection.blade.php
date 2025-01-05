@@ -80,7 +80,16 @@
     </div>
     <div class="relative z-10 bg-red-500 hero-overlay"
          x-ref="contentCarousel">
-        {{ $content }}
+        @foreach ($herocontent as $value)
+            <video src="{{ asset('storage/' . $value['url']) }}"
+                   class="absolute z-30 object-cover w-full h-full"
+                   id="carouselContent"
+                   autoplay
+                   muted
+                   style="z-index: {{ $value['index'] }};"
+                   loop>
+            </video>
+        @endforeach
     </div>
 
 </div>

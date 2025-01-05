@@ -16,12 +16,12 @@
 </head>
 
 <body class="w-full">
-    <x-Navbar></x-Navbar>
+    <x-navbar></x-navbar>
 
 
     {{ $slot }}
 
-    <x-Footer></x-Footer>
+    <x-footer></x-footer>
 </body>
 
 </html>
