@@ -56,12 +56,14 @@
                                  x-on:focus="dropdownFocus()"
                                  x-on:blur="dropdownBlur()"
                                  class="btn btn-ghost btn-sm rounded-btn">Menu</div>
-                            <ul tabindex="0"
+                            <ul tabindex="0"x-on:focus="dropdownFocus()"
+                                x-on:blur="dropdownBlur()"
                                 class="menu dropdown-content bg-base-100 rounded-box z-[1] mt-4 w-48 md:w-52 p-2 shadow">
 
                                 <li>
                                     <details open>
-                                        <summary>Cara Mendaftar</summary>
+                                        <summary x-on:focus="dropdownFocus()"
+                                                 x-on:blur="dropdownBlur()">Cara Mendaftar</summary>
                                         <ul>
                                             <li><a>Metode Online</a></li>
                                             <li><a>Metode Offline</a></li>
@@ -70,7 +72,8 @@
                                 </li>
                                 <li>
                                     <details>
-                                        <summary>Jurusan</summary>
+                                        <summary x-on:focus="dropdownFocus()"
+                                                 x-on:blur="dropdownBlur()">Jurusan</summary>
                                         <ul>
                                             <li><a>RPL</a></li>
                                             <li><a>TOTR</a></li>
@@ -112,10 +115,14 @@
                                 </svg>
                             </div>
                             <ul tabindex="0"
+                                x-on:focus="dropdownFocus()"
+                                x-on:blur="dropdownBlur()"
                                 class="menu dropdown-content before:hidden rounded-box z-[1] mt-3 ml-[-150px] w-64 p-2 ">
 
                                 <div class=" join">
-                                    <input class="text-gray-900 focus:outline-none input focus:ring-0 join-item input-sm"
+                                    <input x-on:focus="dropdownFocus()"
+                                           x-on:blur="dropdownBlur()"
+                                           class="text-gray-900 focus:outline-none input focus:ring-0 join-item input-sm"
                                            placeholder="Search `Cara Mendaftar`" />
                                     <button
                                             class="text-white bg-blue-600 rounded-r-full hover:bg-blue-800 btn join-item btn-sm">
