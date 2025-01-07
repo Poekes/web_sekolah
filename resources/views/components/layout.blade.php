@@ -15,7 +15,7 @@
     @vite('resources/js/app.js')
 </head>
 
-<body class="w-full">
+<body class="w-full bg-base-100">
     <x-navbar></x-navbar>
 
 

@@ -1,4 +1,4 @@
-<div class="w-full hero bg-base-200 !min-w-[200px]">
+<div class="w-full hero  !min-w-[200px]">
     <div class="flex-col-reverse w-full hero-content !min-w-[200px] md:flex-row-reverse lg:px-6">
         <div class=" w-[95%]  bg-transparent rounded-lg shadow-2xl sm:w-96 sm:h-auto min-w-[40%] aspect-video">
             <img src="{{ 'storage/fotosmk.jpg' }}"
