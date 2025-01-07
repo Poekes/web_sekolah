@@ -1,6 +1,6 @@
 <div class="max-w-[1300px]  m-auto py-2 px-1 flex flex-wrap justify-center items-center  gap-4 bg-sky-600 ">
     <h1 class="w-full my-1 text-4xl font-bold text-center sm:text-5xl">Prestasi</h1>
-    <div class="overflow-hidden rounded-md  card bg-base-100 image-full shadow-md w-80 md:w-[24rem] lg:w-[26rem] aspect-square before:hidden"
+    <div class="overflow-hidden rounded-md  card bg-base-100 image-full shadow-md w-80 md:w-[24rem] lg:w-[27rem] 2xl:w-[29rem]  aspect-square before:hidden"
          x-data="{
              element: false,
              hover() {
@@ -30,7 +30,7 @@
         </div>
     </div>
 
-    <div class="overflow-hidden rounded-md  card bg-base-100 image-full shadow-md w-80 md:w-[24rem] lg:w-[26rem] aspect-square before:hidden"
+    <div class="overflow-hidden rounded-md  card bg-base-100 image-full shadow-md w-80 md:w-[24rem] lg:w-[27rem] 2xl:w-[29rem]  aspect-square before:hidden"
          x-data="{
              element: false,
              hover() {
@@ -60,7 +60,7 @@
         </div>
     </div>
 
-    <div class="overflow-hidden rounded-md  card bg-base-100 image-full shadow-md w-80 md:w-[24rem] lg:w-[26rem] aspect-square before:hidden"
+    <div class="overflow-hidden rounded-md  card bg-base-100 image-full shadow-md w-80 md:w-[24rem] lg:w-[27rem] 2xl:w-[29rem]  aspect-square before:hidden"
          x-data="{
              element: false,
              hover() {
@@ -90,7 +90,7 @@
         </div>
     </div>
 
-    <div class="overflow-hidden rounded-md  card bg-base-100 image-full shadow-md w-80 md:w-[24rem] lg:w-[26rem] aspect-square before:hidden"
+    <div class="overflow-hidden rounded-md  card bg-base-100 image-full shadow-md w-80 md:w-[24rem] lg:w-[27rem] 2xl:w-[29rem]  aspect-square before:hidden"
          x-data="{
              element: false,
              hover() {
