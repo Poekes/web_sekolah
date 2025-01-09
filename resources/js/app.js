@@ -12,7 +12,6 @@ Alpine.store("window", {
 });
 
 Alpine.start();
-
 window.onscroll = (event) => {
     Alpine.store("window").FuncOnScroll.forEach((element) => {
         element(event);

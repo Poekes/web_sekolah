@@ -1,6 +1,11 @@
-<div class="max-w-[1300px]  m-auto py-2 px-1 flex flex-wrap justify-center items-center  gap-4 bg-sky-600 ">
-    <h1 class="w-full my-1 text-4xl font-bold text-center sm:text-5xl">Prestasi</h1>
-    <div class="overflow-hidden rounded-md  card bg-base-100 image-full shadow-md w-80 md:w-[24rem] lg:w-[26rem] aspect-square before:hidden"
+<div
+     class="max-w-[1300px] relative m-auto py-2 px-1  2xl:overflow-ellipsis flex flex-wrap justify-center items-center  gap-4  ">
+    <div class="absolute top-0 z-10 flex items-center justify-center w-full h-full">
+        <div class=" w-[20px]  h-[120px] bg-sky-600 absolute blur-lg   top-0 -rotate-45 opacity-35">
+        </div>
+    </div>
+    <h1 class="relative z-20 w-full my-1 text-4xl font-bold text-center sm:text-5xl">Prestasi</h1>
+    <div class="overflow-hidden rounded-md  card bg-base-100 image-full relative z-20 shadow-md w-80 md:w-[24rem] lg:w-[27rem] 2xl:w-[29rem]  aspect-video before:hidden"
          x-data="{
              element: false,
              hover() {
@@ -30,7 +35,7 @@
         </div>
     </div>
 
-    <div class="overflow-hidden rounded-md  card bg-base-100 image-full shadow-md w-80 md:w-[24rem] lg:w-[26rem] aspect-square before:hidden"
+    <div class="overflow-hidden rounded-md  card bg-base-100 image-full relative z-20 shadow-md w-80 md:w-[24rem] lg:w-[27rem] 2xl:w-[29rem]  aspect-video before:hidden"
          x-data="{
              element: false,
              hover() {
@@ -60,7 +65,7 @@
         </div>
     </div>
 
-    <div class="overflow-hidden rounded-md  card bg-base-100 image-full shadow-md w-80 md:w-[24rem] lg:w-[26rem] aspect-square before:hidden"
+    <div class="overflow-hidden rounded-md  card bg-base-100 image-full relative z-20 shadow-md w-80 md:w-[24rem] lg:w-[27rem] 2xl:w-[29rem]  aspect-video before:hidden"
          x-data="{
              element: false,
              hover() {
@@ -90,7 +95,7 @@
         </div>
     </div>
 
-    <div class="overflow-hidden rounded-md  card bg-base-100 image-full shadow-md w-80 md:w-[24rem] lg:w-[26rem] aspect-square before:hidden"
+    <div class="overflow-hidden rounded-md  card bg-base-100 image-full relative z-20 shadow-md w-80 md:w-[24rem] lg:w-[27rem] 2xl:w-[29rem]  aspect-video before:hidden"
          x-data="{
              element: false,
              hover() {

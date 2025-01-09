@@ -81,7 +81,7 @@
 
         </div>
     </div>
-    <div class="relative z-10 bg-red-500 hero-overlay"
+    <div class="relative z-10 hero-overlay"
          x-ref="contentCarousel">
         @foreach ($herocontent as $value)
             <video src="{{ asset('storage/' . $value['url']) }}"
