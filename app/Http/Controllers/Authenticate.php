@@ -28,4 +28,11 @@ class Authenticate extends Controller
 
         return back()->with('invalidAuth', 0);
     }
+    public function logout(Request $req)
+    {
+        Auth::logout();
+        $req->session()->invalidate();
+        $req->session()->regenerateToken();
+        return redirect()->route('login')->with('logout', 0);
+    }
 }
