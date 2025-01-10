@@ -84,6 +84,17 @@
                                 </li>
                                 <li><a>Visi Misi</a></li>
                                 <li><a>Galery</a></li>
+                                @auth
+                                    <li>
+                                        <form class="grid w-full h-full grid-cols-1 "
+                                              action="{{ route('logout') }}"
+                                              method="POST">
+                                            @csrf
+                                            <button type="submit"
+                                                    class="col-span-1 text-left">Logout</button>
+                                        </form>
+                                    </li>
+                                @endauth
 
 
                             </ul>

@@ -21,6 +21,23 @@
                 </div>
             </div>
         @endif
+        @if (Session()->has('logout'))
+            <div class="z-20 toast toast-bottom toast-center"
+                 x-data="{
+                     init() {
+                         $nextTick(() =>
+                             setTimeout(() => {
+                                 $el.remove();
+                             }, 10000)
+                         )
+                     }
+                 }">
+                <div class="items-center px-10 py-2 font-bold rounded-md alert alert-success">
+                    <span class="text-center ">Berhasil Logout</span>
+
+                </div>
+            </div>
+        @endif
         <div class="flex-col hero-content max-w-[60rem] w-full lg:flex-row-reverse">
             <div class="text-center lg:text-left">
                 <h1 class="text-3xl font-bold sm:text-5xl">SMK MUHAMMADIYAH PAGUYANGAN</h1>
