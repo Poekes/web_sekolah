@@ -1,41 +1,49 @@
 <?php
 
+use App\Http\Controllers\Authenticate;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
-Route::get('/', function () {
-    $content = [
-        collect([
-            'url' => 'SMK-scane1.mp4',
-            'type' => 'mp4',
-            'index' => 4,
+Route::group(['middleware' => 'auth'], function () {
 
-        ]),
-        collect([
-            'url' => 'SMK-scane2.mp4',
-            'type' => 'mp4',
+    Route::get('/', function () {
+        $content = [
+            collect([
+                'url' => 'SMK-scane1.mp4',
+                'type' => 'mp4',
+                'index' => 4,
 
-            'index' => 3,
+            ]),
+            collect([
+                'url' => 'SMK-scane2.mp4',
+                'type' => 'mp4',
 
-        ]),
-        collect([
-            'url' => 'SMK-scane3.mp4',
-            'type' => 'mp4',
-            'index' => 2,
+                'index' => 3,
 
-        ]),
-        collect([
-            'url' => 'SMK-scane4.mp4',
-            'type' => 'mp4',
+            ]),
+            collect([
+                'url' => 'SMK-scane3.mp4',
+                'type' => 'mp4',
+                'index' => 2,
 
-            'index' => 1,
+            ]),
+            collect([
+                'url' => 'SMK-scane4.mp4',
+                'type' => 'mp4',
 
-        ]),
-    ];
-    return view('Home', compact('content'));
+                'index' => 1,
+
+            ]),
+        ];
+        return view('Home', compact('content'));
+    });
 });
+
+
 
 Route::get('/test', function () {
     // return Storage::url('test.pdf');
     return '<a href="' . Storage::url('test.pdf') . '">open pdf</a>';
 });
+Route::get('/login', [Authenticate::class, 'index'])->name('login')->middleware('guest');
+Route::post('/login', [Authenticate::class, 'auth'])->name('auth')->middleware(['guest', 'throttle:login']);
