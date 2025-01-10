@@ -12,11 +12,18 @@
 
 </head>
 
-<body>
-    <div class="min-h-screen hero bg-base-200">
-        <div class="flex-col hero-content lg:flex-row-reverse">
+<body class="bg-base-200 min-w-[330px]">
+    <div class="min-h-screen hero ">
+        @if (Session()->has('invalidAuth'))
+            <div class="z-20 toast toast-bottom toast-center">
+                <div class="items-center px-10 py-2 font-bold rounded-md alert alert-error">
+                    <span class="text-center">Login Gagal</span>
+                </div>
+            </div>
+        @endif
+        <div class="flex-col hero-content max-w-[60rem] w-full lg:flex-row-reverse">
             <div class="text-center lg:text-left">
-                <h1 class="text-5xl font-bold">Login now!</h1>
+                <h1 class="text-3xl font-bold sm:text-5xl">SMK MUHAMMADIYAH PAGUYANGAN</h1>
                 <p class="py-6">
                     Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem
                     quasi. In deleniti eaque aut repudiandae et a id nisi.
@@ -33,17 +40,22 @@
                         </label>
                         <input type="text"
                                placeholder="Username"
-                               class="input input-bordered"
+                               class="input input-bordered @error('username')
+                                border-red-700
+                            @enderror"
                                required
+                               value="{{ old('username') }}"
                                name="username" />
                     </div>
                     <div class="form-control">
                         <label class="label">
-                            <span class="label-text">Password</span>
+                            <span class="label-text ">Password</span>
                         </label>
                         <input type="password"
                                placeholder="password"
-                               class="input input-bordered"
+                               class="input input-bordered @error('password')
+                                border-red-700
+                            @enderror"
                                required
                                name="password" />
                         <label class="label">

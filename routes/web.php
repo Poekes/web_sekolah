@@ -46,4 +46,4 @@ Route::get('/test', function () {
     return '<a href="' . Storage::url('test.pdf') . '">open pdf</a>';
 });
 Route::get('/login', [Authenticate::class, 'index'])->name('login')->middleware('guest');
-Route::post('/login', [Authenticate::class, 'auth'])->name('auth')->middleware(['throttle:login']);
+Route::post('/login', [Authenticate::class, 'auth'])->name('auth')->middleware(['guest', 'throttle:login']);
