@@ -33,7 +33,8 @@
 
             {{-- Button Home --}}
             <li>
-                <a class="bg-gray-100 bg-opacity-20">
+                <a class="bg-gray-100 bg-opacity-20"
+                   @if (!Route::is('home')) href="{{ route('home') }}" @endif>
                     <svg xmlns="http://www.w3.org/2000/svg"
                          class="w-5 h-5"
                          fill="none"
@@ -95,6 +96,11 @@
                                         </form>
                                     </li>
                                 @endauth
+                                @guest
+                                    <li>
+                                        <a href="{{ route('login') }}">Login</a>
+                                    </li>
+                                @endguest
 
 
                             </ul>
@@ -157,7 +163,68 @@
                 </div>
 
             </li>
+
+            {{-- Button PROFIL --}}
+            @auth
+
+                <li>
+                    <button class="h-full bg-gray-100 bg-opacity-20 btn btn-ghost btn-sm rounded-btn"
+                            @click="$refs.openProfil.click()">
+                        <svg xmlns="http://www.w3.org/2000/svg"
+                             fill="none"
+                             viewBox="0 0 24 24"
+                             stroke-width="1.5"
+                             class="w-5 h-5"
+                             stroke="currentColor">
+                            <path stroke-linecap="round"
+                                  stroke-linejoin="round"
+                                  d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                        </svg>
+
+                    </button>
+
+                </li>
+            @endauth
+
         </ul>
+        @auth
+            <div class="drawer drawer-end">
+                <input id="drawerProfil"
+                       type="checkbox"
+                       class="drawer-toggle" />
+                <div class="drawer-content">
+                    <!-- Page content here -->
+                    <label for="drawerProfil"
+                           x-ref="openProfil"
+                           class="hidden drawer-button btn btn-primary">Open drawer</label>
+                </div>
+                <div class="drawer-side">
+                    <label for="drawerProfil"
+                           aria-label="close sidebar"
+                           class="drawer-overlay"></label>
+                    <ul class="min-h-full p-4 menu bg-base-200 text-base-content w-80">
+                        <div class="flex flex-col items-center justify-center w-full gap-2 my-2">
+                            <svg xmlns="http://www.w3.org/2000/svg"
+                                 fill="none"
+                                 viewBox="0 0 24 24"
+                                 stroke-width="1.5"
+                                 class="border rounded-full w-14 h-14 bg-base-300"
+                                 stroke="currentColor">
+                                <path stroke-linecap="round"
+                                      stroke-linejoin="round"
+                                      d="M15.75 6a3.75 3.75 0 1 1-7.5 0 3.75 3.75 0 0 1 7.5 0ZM4.501 20.118a7.5 7.5 0 0 1 14.998 0A17.933 17.933 0 0 1 12 21.75c-2.676 0-5.216-.584-7.499-1.632Z" />
+                            </svg>
+                            <p>Hii, {{ Request()->user()->name }}</p>
+                        </div>
+                        <!-- Sidebar content here -->
+                        <li><a class="mb-1 border-b border-gray-400 rounded-none">Create Article</a></li>
+                        <li><a class="mb-1 border-b border-gray-400 rounded-none">My Comment</a></li>
+                        <li><a class="mb-1 border-b border-gray-400 rounded-none">Logout</a></li>
+                    </ul>
+                </div>
+            </div>
+        @endauth
+
     </div>
 
 </div>

@@ -18,7 +18,6 @@
 <body class="w-full bg-base-100">
     <x-navbar></x-navbar>
 
-
     {{ $slot }}
 
     <x-footer></x-footer>

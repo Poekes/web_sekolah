@@ -15,7 +15,10 @@
 <body class="bg-base-200 min-w-[330px]">
     <div class="min-h-screen hero ">
         @if (Session()->has('invalidAuth'))
-            <div class="z-20 toast toast-bottom toast-center">
+            <div class="z-20 toast toast-bottom toast-center"
+                 x-data="{
+                     init() { $nextTick(() => setTime(() => $el.remove(), 10000)); }
+                 }">
                 <div class="items-center px-10 py-2 font-bold rounded-md alert alert-error">
                     <span class="text-center">Login Gagal</span>
                 </div>
@@ -24,13 +27,7 @@
         @if (Session()->has('logout'))
             <div class="z-20 toast toast-bottom toast-center"
                  x-data="{
-                     init() {
-                         $nextTick(() =>
-                             setTimeout(() => {
-                                 $el.remove();
-                             }, 10000)
-                         )
-                     }
+                     init() { $nextTick(() => setTimeout(() => $el.remove(), 10000)) }
                  }">
                 <div class="items-center px-10 py-2 font-bold rounded-md alert alert-success">
                     <span class="text-center ">Berhasil Logout</span>
