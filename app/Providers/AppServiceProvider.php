@@ -24,7 +24,7 @@ class AppServiceProvider extends ServiceProvider
     {
         RateLimiter::for('login', function (Request $req) {
             return Limit::perMinute(3)->by($req->input('username'))->response(function (Request $req) {
-                return redirect()->route('login')->with('limitUser', 'To Many Request');
+                return redirect()->route('login')->with('limitUser', 'To Many Request')->withInput();
             });
         });
     }
