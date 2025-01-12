@@ -1,13 +1,18 @@
 <?php
 
+use App\Http\Controllers\AdminController;
 use App\Http\Controllers\Authenticate;
 use App\Http\Controllers\Homepage;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
-Route::group(['middleware' => 'auth'], function () {});
+Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
+
+    Route::get('/', [AdminController::class, 'index'])->name('admin');
+});
 
 Route::get('/', [Homepage::class, 'index'])->name('home');
+
 
 
 Route::get('/test', function () {
