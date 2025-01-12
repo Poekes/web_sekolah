@@ -8,8 +8,7 @@
     <meta http-equiv="X-UA-Compatible"
           content="ie=edge">
     <title>Login SMK MUHAMMADIYAH PAGUYANGAN</title>
-    @vite(['resources/js/app.js'])
-
+    <x-headvite />
 </head>
 
 <body class="bg-base-200 min-w-[330px]">

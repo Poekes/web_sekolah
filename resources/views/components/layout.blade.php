@@ -12,7 +12,7 @@
     <link rel="shortcut icon"
           href="{{ asset('storage/logo_smk_muh.png') }}"
           type="image/x-icon">
-    @vite(['resources/js/app.js'])
+    <x-headvite />
 </head>
 
 <body class="w-full bg-base-100">
