@@ -85,17 +85,6 @@
                                 </li>
                                 <li><a>Visi Misi</a></li>
                                 <li><a>Galery</a></li>
-                                @auth
-                                    <li>
-                                        <form class="grid w-full h-full grid-cols-1 "
-                                              action="{{ route('logout') }}"
-                                              method="POST">
-                                            @csrf
-                                            <button type="submit"
-                                                    class="col-span-1 text-left">Logout</button>
-                                        </form>
-                                    </li>
-                                @endauth
                                 @guest
                                     <li>
                                         <a href="{{ route('login') }}">Login</a>
@@ -219,7 +208,13 @@
                         <!-- Sidebar content here -->
                         <li><a class="mb-1 border-b border-gray-400 rounded-none">Create Article</a></li>
                         <li><a class="mb-1 border-b border-gray-400 rounded-none">My Comment</a></li>
-                        <li><a class="mb-1 border-b border-gray-400 rounded-none">Logout</a></li>
+                        <form action="{{ route('logout') }}"
+                              method="POST">
+                            @csrf
+                            <button type="submit"
+                                    class="w-full col-span-1 px-5 py-2 font-bold text-center text-white bg-red-600 rounded-sm ">Logout</button>
+                        </form>
+
                     </ul>
                 </div>
             </div>
