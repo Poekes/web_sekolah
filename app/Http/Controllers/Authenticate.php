@@ -26,7 +26,7 @@ class Authenticate extends Controller
             return redirect()->intended('/');
         }
 
-        return back()->with('invalidAuth', 0);
+        return back()->with('invalidAuth', 0)->withInput();
     }
     public function logout(Request $req)
     {
