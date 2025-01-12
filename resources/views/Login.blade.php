@@ -71,20 +71,29 @@
                                value="{{ old('username') }}"
                                name="username" />
                     </div>
-                    <div class="form-control">
-                        <label class="label">
-                            <span class="label-text ">Password</span>
+                    <div class="form-control"
+                         x-data="{ password: $refs.password }">
+                        <label class="flex items-center justify-between">
+                            <span class=" label-text">Password</span>
+                            <label class="gap-1 cursor-pointer label">
+                                <span class="label-text">Lihat</span>
+                                <input type="checkbox"
+                                       x-init="$el.onchange = () => password.type = $el.checked ? 'text' : 'password'"
+                                       class="checkbox checkbox-xs" />
+                            </label>
                         </label>
                         <input type="password"
                                placeholder="password"
+                               autocomplete="on"
                                class="input input-bordered @error('password')
                                 border-red-700
                             @enderror"
                                required
+                               x-ref="password"
                                name="password" />
                         <label class="label">
-                            <a href="#"
-                               class="label-text-alt link link-hover">Forgot password?</a>
+                            <a href="{{ route('home') }}"
+                               class="label-text-alt link link-primary link-hover">KEMBALI</a>
                         </label>
                     </div>
                     <div class="mt-6 form-control">
