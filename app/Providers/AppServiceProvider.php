@@ -27,5 +27,9 @@ class AppServiceProvider extends ServiceProvider
                 return redirect()->route('login')->with('limitUser', 'To Many Request')->withInput();
             });
         });
+
+        RateLimiter::for('global', function (Request $req) {
+            return $req->user() ? Limit::perMinute(2000)->by($req->ip()) : Limit::perMinute(500)->by($req->ip());
+        });
     }
 }
