@@ -18,7 +18,7 @@
               mainbox: $refs.mainbox,
           }
       }">
-    <div class="sticky top-0 z-10 px-4 py-0 border-b border-gray-200 min-h-12 navbar bg-base-300">
+    <div class="sticky z-[999] top-0  w-full px-4 py-0 border-b border-gray-200 min-h-12 navbar bg-base-300">
         <div class="flex-none">
             <label class="btn btn-square btn-sm swap swap-rotate">
                 <!-- this hidden checkbox controls the state -->
@@ -48,17 +48,23 @@
             </label>
         </div>
         <div class="flex-1">
-            <h1 class="mx-2 text-lg font-bold ">daisyUI</h1>
+
+            <div class="mx-2 text-sm breadcrumbs">
+                <ul>
+                    <li><a>Home</a></li>
+                    <li><a>Documents</a></li>
+                    <li>Add Document</li>
+                </ul>
+            </div>
         </div>
 
     </div>
-    <div class="w-full  grid grid-cols-[20rem,1fr] transition-all"
+    <div class="w-full  grid grid-cols-[20rem,1fr] transition-all relative"
          x-ref="mainbox">
-        <div class="sticky top-[3rem] overflow-hidden h-[calc(100vh_-_3rem)] col-span-1 ">
+        <div class="fixed sm:sticky top-[3rem] overflow-hidden h-[calc(100vh_-_3rem)] col-span-1 z-20 ">
             navigasi
-
         </div>
-        <div class="col-span-1 bg-gray-500">
+        <div class="col-span-1 bg-gray-500 min-w-[300px] z-10">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et voluptate molestias in expedita iusto vitae
             maiores cum veritatis alias earum, nisi nulla dolor enim facilis necessitatibus laudantium. Odit itaque
             omnis possimus consectetur totam, mollitia, labore doloribus laborum, magni dolorum et impedit tempora

@@ -16,7 +16,7 @@
         @if (Session()->has('limitUser'))
             <div class="z-20 toast toast-bottom toast-center"
                  x-data="{
-                     init() { $nextTick(() => setTime(() => $el.remove(), 10000)); }
+                     init() { $nextTick(() => setTimeout(() => $el.remove(), 10000)); }
                  }">
                 <div class="items-center px-10 py-2 font-bold rounded-md alert alert-error">
                     <span class="text-center">Anda di Blokir, Tunggu 1 menit untuk mencoba lagi</span>
@@ -26,7 +26,7 @@
         @if (Session()->has('invalidAuth'))
             <div class="z-20 toast toast-bottom toast-center"
                  x-data="{
-                     init() { $nextTick(() => setTime(() => $el.remove(), 10000)); }
+                     init() { $nextTick(() => setTimeout(() => $el.remove(), 10000)); }
                  }">
                 <div class="items-center px-10 py-2 font-bold rounded-md alert alert-error">
                     <span class="text-center">Login Gagal</span>
