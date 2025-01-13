@@ -23,7 +23,7 @@ class Authenticate extends Controller
         if (Auth::attempt($cre)) {
             $req->session()->regenerate();
 
-            return redirect()->intended(Auth::user()->role == "admin" ? '/admin' : '/');
+            return redirect()->intended($req->user()->role == "admin" ? '/admin' : '/');
         }
 
         return back()->with('invalidAuth', 0)->withInput();
