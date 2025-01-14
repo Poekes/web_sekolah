@@ -61,8 +61,23 @@
     </div>
     <div class="w-full  grid grid-cols-[20rem,1fr] transition-all "
          x-ref="mainbox">
-        <div class="bg-white sticky top-[3rem] overflow-hidden h-[calc(100vh_-_3rem)] col-span-1 z-20 ">
-            navigasi
+        <div
+             class="bg-blue-400 sticky top-[3rem] overflow-hidden h-[calc(100vh_-_3rem)] col-span-1 z-20 overflow-y-auto">
+            <h1 class="p-2 font-bold text-center text-white text-md drop-shadow-md ">SMK MUHAMADIYAH PAGUYANGAN </h1>
+            <ul class="w-full space-y-1 menu rounded-box prose-a:bg-white prose-a:border prose-a:border-gray-800">
+                <li><a>statistik</a></li>
+                <li>
+                    <details>
+                        <summary class="bg-white border border-gray-800">Page</summary>
+                        <ul class="pt-1 space-y-1">
+                            <li><a>Utama</a></li>
+                            <li><a>Submenu 2</a></li>
+
+                        </ul>
+                    </details>
+                </li>
+                <li><a>Item 3</a></li>
+            </ul>
         </div>
         <div class="absolute left-0 z-10 col-span-1 bg-gray-100 sm:relative h-[calc(100vh_-_3rem)] overflow-y-auto">
             <div class="max-w-[1200px] m-auto bg-red-400">
