@@ -64,8 +64,8 @@
         <div class="bg-white sticky top-[3rem] overflow-hidden h-[calc(100vh_-_3rem)] col-span-1 z-20 ">
             navigasi
         </div>
-        <div class="absolute left-0 z-10 col-span-1 bg-gray-500 sm:relative h-[calc(100vh_-_3rem)] overflow-y-auto">
-            <div>
+        <div class="absolute left-0 z-10 col-span-1 bg-gray-100 sm:relative h-[calc(100vh_-_3rem)] overflow-y-auto">
+            <div class="max-w-[1200px] m-auto bg-red-400">
 
                 Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et voluptate molestias in expedita iusto vitae
                 maiores cum veritatis alias earum, nisi nulla dolor enim facilis necessitatibus laudantium. Odit itaque
