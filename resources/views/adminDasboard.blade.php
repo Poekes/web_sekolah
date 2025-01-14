@@ -61,10 +61,10 @@
     </div>
     <div class="w-full  grid grid-cols-[20rem,1fr] transition-all relative"
          x-ref="mainbox">
-        <div class="fixed sm:sticky top-[3rem] overflow-hidden h-[calc(100vh_-_3rem)] col-span-1 z-20 ">
+        <div class="bg-white sticky top-[3rem] overflow-hidden h-[calc(100vh_-_3rem)] col-span-1 z-20 ">
             navigasi
         </div>
-        <div class="col-span-1 bg-gray-500 min-w-[300px] z-10">
+        <div class="absolute left-0 z-10 col-span-1 bg-gray-500 sm:relative">
             Lorem ipsum dolor, sit amet consectetur adipisicing elit. Et voluptate molestias in expedita iusto vitae
             maiores cum veritatis alias earum, nisi nulla dolor enim facilis necessitatibus laudantium. Odit itaque
             omnis possimus consectetur totam, mollitia, labore doloribus laborum, magni dolorum et impedit tempora
