@@ -1,4 +1,3 @@
-import "../bootstrap";
 import Quill from "quill";
 const toolbarOptions = [
     [{ size: ["small", false, "large", "huge"] }], // custom dropdown

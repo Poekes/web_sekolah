@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\Authenticate;
 use App\Http\Controllers\Homepage;
 use Illuminate\Support\Facades\Route;
@@ -11,7 +12,9 @@ Route::group(['middleware' => 'throttle:global'], function () {
 
     Route::group(['middleware' => ['auth', 'admin'], 'prefix' => 'admin'], function () {
 
-        Route::get('/', [AdminController::class, 'index'])->name('admin');
+        Route::get('/', [AdminController::class, 'index'])->name('admin.statistik');
+        Route::get('/artikel', [ArtikelController::class, 'index'])->name('admin.artikel');
+        Route::get('/artikel/tambah', [ArtikelController::class, 'tambah'])->name('admin.artikel.tambah');
     });
 
     Route::get('/', [Homepage::class, 'index'])->name('home');
