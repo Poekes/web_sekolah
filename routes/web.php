@@ -4,6 +4,7 @@ use App\Http\Controllers\AdminController;
 use App\Http\Controllers\ArtikelController;
 use App\Http\Controllers\Authenticate;
 use App\Http\Controllers\Homepage;
+use App\Http\Controllers\ImgController;
 use Illuminate\Support\Facades\Route;
 use Illuminate\Support\Facades\Storage;
 
